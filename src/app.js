@@ -4,7 +4,7 @@ const app = express();
 
 // --- ERRO 1: Senha exposta (Secret Exposure) ---
 // Imagine que esta é a chave para acessar o cofre da empresa!
-const API_KEY_COFRE = "SK-abc1234567890-PROD-SEGREDOS";
+const API_KEY_COFRE = process.env.API_KEY;
 
 app.get('/login', (req, res) => {
     let user = req.query.user;
